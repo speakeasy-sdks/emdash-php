@@ -5,6 +5,7 @@ src/Fleet.php
 src/Systems.php
 src/SpaceTraders.php
 src/SpaceTradersBuilder.php
+.gitignore
 composer.json
 phpstan.neon
 src/Utils/EnumHandler.php

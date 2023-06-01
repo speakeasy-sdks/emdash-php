@@ -79,8 +79,8 @@ class SpaceTraders
 	private ?Models\Shared\Security $_security;
 	private string $_serverUrl;
 	private string $_language = 'php';
-	private string $_sdkVersion = '1.0.0';
-	private string $_genVersion = '2.32.7';
+	private string $_sdkVersion = '1.1.0';
+	private string $_genVersion = '2.34.2';
 
 	/**
 	 * Returns a new instance of the SDK builder used to configure and create the SDK instance.
