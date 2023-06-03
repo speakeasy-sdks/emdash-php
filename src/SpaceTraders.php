@@ -73,14 +73,7 @@ class SpaceTraders
      */
 	public Systems $systems;
 		
-	// SDK private variables namespaced with _ to avoid conflicts with API models
-	private ?\GuzzleHttp\ClientInterface $_defaultClient;
-	private ?\GuzzleHttp\ClientInterface $_securityClient;
-	private ?Models\Shared\Security $_security;
-	private string $_serverUrl;
-	private string $_language = 'php';
-	private string $_sdkVersion = '1.1.0';
-	private string $_genVersion = '2.34.2';
+	private SDKConfiguration $sdkConfiguration;
 
 	/**
 	 * Returns a new instance of the SDK builder used to configure and create the SDK instance.
@@ -93,83 +86,21 @@ class SpaceTraders
 	}
 
 	/**
-	 * @param \GuzzleHttp\ClientInterface|null $client	 
-	 * @param Models\Shared\Security|null $security
-	 * @param string $serverUrl
-	 * @param array<string, string>|null $params
+	 * @param SDKConfiguration $sdkConfiguration
 	 */
-	public function __construct(?\GuzzleHttp\ClientInterface $client, ?Models\Shared\Security $security, string $serverUrl, ?array $params)
+	public function __construct(SDKConfiguration $sdkConfiguration)
 	{
-		$this->_defaultClient = $client;
+		$this->sdkConfiguration = $sdkConfiguration;
 		
-		if ($this->_defaultClient === null) {
-			$this->_defaultClient = new \GuzzleHttp\Client([
-				'timeout' => 60,
-			]);
-		}
-
-		$this->_securityClient = null;
-		if ($security !== null) {
-			$this->_security = $security;
-			$this->_securityClient = Utils\Utils::configureSecurityClient($this->_defaultClient, $this->_security);
-		}
+		$this->agents = new Agents($this->sdkConfiguration);
 		
-		if ($this->_securityClient === null) {
-			$this->_securityClient = $this->_defaultClient;
-		}
-
-		if (!empty($serverUrl)) {
-			$this->_serverUrl = Utils\Utils::templateUrl($serverUrl, $params);
-		}
+		$this->contracts = new Contracts($this->sdkConfiguration);
 		
-		if (empty($this->_serverUrl)) {
-			$this->_serverUrl = $this::SERVERS[0];
-		}
+		$this->factions = new Factions($this->sdkConfiguration);
 		
-		$this->agents = new Agents(
-			$this->_defaultClient,
-			$this->_securityClient,
-			$this->_serverUrl,
-			$this->_language,
-			$this->_sdkVersion,
-			$this->_genVersion
-		);
+		$this->fleet = new Fleet($this->sdkConfiguration);
 		
-		$this->contracts = new Contracts(
-			$this->_defaultClient,
-			$this->_securityClient,
-			$this->_serverUrl,
-			$this->_language,
-			$this->_sdkVersion,
-			$this->_genVersion
-		);
-		
-		$this->factions = new Factions(
-			$this->_defaultClient,
-			$this->_securityClient,
-			$this->_serverUrl,
-			$this->_language,
-			$this->_sdkVersion,
-			$this->_genVersion
-		);
-		
-		$this->fleet = new Fleet(
-			$this->_defaultClient,
-			$this->_securityClient,
-			$this->_serverUrl,
-			$this->_language,
-			$this->_sdkVersion,
-			$this->_genVersion
-		);
-		
-		$this->systems = new Systems(
-			$this->_defaultClient,
-			$this->_securityClient,
-			$this->_serverUrl,
-			$this->_language,
-			$this->_sdkVersion,
-			$this->_genVersion
-		);
+		$this->systems = new Systems($this->sdkConfiguration);
 	}
 	
     /**
@@ -182,14 +113,14 @@ class SpaceTraders
 	public function getStatus(
     ): \emdash\SpaceTraders\Models\Operations\GetStatusResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/');
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $httpResponse = $this->_securityClient->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -234,16 +165,16 @@ class SpaceTraders
         \emdash\SpaceTraders\Models\Operations\RegisterRequestBody $request,
     ): \emdash\SpaceTraders\Models\Operations\RegisterResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/register');
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "request", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $httpResponse = $this->_securityClient->request('POST', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 

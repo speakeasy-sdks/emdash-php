@@ -11,30 +11,14 @@ namespace emdash\SpaceTraders;
 class Fleet 
 {
 
-	// SDK private variables namespaced with _ to avoid conflicts with API models
-	private \GuzzleHttp\ClientInterface $_defaultClient;
-	private \GuzzleHttp\ClientInterface $_securityClient;
-	private string $_serverUrl;
-	private string $_language;
-	private string $_sdkVersion;
-	private string $_genVersion;	
+	private SDKConfiguration $sdkConfiguration;
 
 	/**
-	 * @param \GuzzleHttp\ClientInterface $defaultClient
-	 * @param \GuzzleHttp\ClientInterface $securityClient
-	 * @param string $serverUrl
-	 * @param string $language
-	 * @param string $sdkVersion
-	 * @param string $genVersion
+	 * @param SDKConfiguration $sdkConfig
 	 */
-	public function __construct(\GuzzleHttp\ClientInterface $defaultClient, \GuzzleHttp\ClientInterface $securityClient, string $serverUrl, string $language, string $sdkVersion, string $genVersion)
+	public function __construct(SDKConfiguration $sdkConfig)
 	{
-		$this->_defaultClient = $defaultClient;
-		$this->_securityClient = $securityClient;
-		$this->_serverUrl = $serverUrl;
-		$this->_language = $language;
-		$this->_sdkVersion = $sdkVersion;
-		$this->_genVersion = $genVersion;
+		$this->sdkConfiguration = $sdkConfig;
 	}
 	
     /**
@@ -55,14 +39,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\CreateChartSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\CreateChartResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/chart', \emdash\SpaceTraders\Models\Operations\CreateChartRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -96,14 +80,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\CreateShipShipScanSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\CreateShipShipScanResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/scan/ships', \emdash\SpaceTraders\Models\Operations\CreateShipShipScanRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -137,14 +121,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\CreateShipSystemScanSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\CreateShipSystemScanResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/scan/systems', \emdash\SpaceTraders\Models\Operations\CreateShipSystemScanRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -178,14 +162,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\CreateShipWaypointScanSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\CreateShipWaypointScanResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/scan/waypoints', \emdash\SpaceTraders\Models\Operations\CreateShipWaypointScanRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -221,14 +205,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\CreateSurveySecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\CreateSurveyResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/survey', \emdash\SpaceTraders\Models\Operations\CreateSurveyRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -264,14 +248,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\DockShipSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\DockShipResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/dock', \emdash\SpaceTraders\Models\Operations\DockShipRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -305,16 +289,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\ExtractResourcesSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\ExtractResourcesResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/extract', \emdash\SpaceTraders\Models\Operations\ExtractResourcesRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -348,14 +332,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\GetMyShipSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\GetMyShipResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}', \emdash\SpaceTraders\Models\Operations\GetMyShipRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -389,14 +373,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\GetMyShipCargoSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\GetMyShipCargoResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/cargo', \emdash\SpaceTraders\Models\Operations\GetMyShipCargoRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -430,15 +414,15 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\GetMyShipsSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\GetMyShipsResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships');
         
         $options = ['http_errors' => false];
         $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\emdash\SpaceTraders\Models\Operations\GetMyShipsRequest::class, $request, null));
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -476,14 +460,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\GetShipCooldownSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\GetShipCooldownResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/cooldown', \emdash\SpaceTraders\Models\Operations\GetShipCooldownRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -519,14 +503,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\GetShipNavSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\GetShipNavResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/nav', \emdash\SpaceTraders\Models\Operations\GetShipNavRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -560,16 +544,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\JettisonSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\JettisonResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/jettison', \emdash\SpaceTraders\Models\Operations\JettisonRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -603,16 +587,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\JumpShipSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\JumpShipResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/jump', \emdash\SpaceTraders\Models\Operations\JumpShipRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -650,16 +634,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\NavigateShipSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\NavigateShipResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/navigate', \emdash\SpaceTraders\Models\Operations\NavigateShipRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -691,16 +675,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\NegotiateContractSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\NegotiateContractResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/negotiate/contract', \emdash\SpaceTraders\Models\Operations\NegotiateContractRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -736,14 +720,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\OrbitShipSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\OrbitShipResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/orbit', \emdash\SpaceTraders\Models\Operations\OrbitShipRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -777,16 +761,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\PatchShipNavSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\PatchShipNavResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/nav', \emdash\SpaceTraders\Models\Operations\PatchShipNavRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('PATCH', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -820,16 +804,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\PurchaseCargoSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\PurchaseCargoResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/purchase', \emdash\SpaceTraders\Models\Operations\PurchaseCargoRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -863,16 +847,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\PurchaseShipSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\PurchaseShipResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships');
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "request", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -906,14 +890,14 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\RefuelShipSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\RefuelShipResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/refuel', \emdash\SpaceTraders\Models\Operations\RefuelShipRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -947,16 +931,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\SellCargoSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\SellCargoResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/sell', \emdash\SpaceTraders\Models\Operations\SellCargoRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -990,16 +974,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\ShipRefineSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\ShipRefineResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/refine', \emdash\SpaceTraders\Models\Operations\ShipRefineRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -1033,16 +1017,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\TransferCargoSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\TransferCargoResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/transfer', \emdash\SpaceTraders\Models\Operations\TransferCargoRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -1078,16 +1062,16 @@ class Fleet
         \emdash\SpaceTraders\Models\Operations\WarpShipSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\WarpShipResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/my/ships/{shipSymbol}/warp', \emdash\SpaceTraders\Models\Operations\WarpShipRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';

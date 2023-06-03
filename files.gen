@@ -1,3 +1,4 @@
+src/SDKConfiguration.php
 src/Agents.php
 src/Contracts.php
 src/Factions.php

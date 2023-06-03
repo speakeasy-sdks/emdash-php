@@ -11,30 +11,14 @@ namespace emdash\SpaceTraders;
 class Systems 
 {
 
-	// SDK private variables namespaced with _ to avoid conflicts with API models
-	private \GuzzleHttp\ClientInterface $_defaultClient;
-	private \GuzzleHttp\ClientInterface $_securityClient;
-	private string $_serverUrl;
-	private string $_language;
-	private string $_sdkVersion;
-	private string $_genVersion;	
+	private SDKConfiguration $sdkConfiguration;
 
 	/**
-	 * @param \GuzzleHttp\ClientInterface $defaultClient
-	 * @param \GuzzleHttp\ClientInterface $securityClient
-	 * @param string $serverUrl
-	 * @param string $language
-	 * @param string $sdkVersion
-	 * @param string $genVersion
+	 * @param SDKConfiguration $sdkConfig
 	 */
-	public function __construct(\GuzzleHttp\ClientInterface $defaultClient, \GuzzleHttp\ClientInterface $securityClient, string $serverUrl, string $language, string $sdkVersion, string $genVersion)
+	public function __construct(SDKConfiguration $sdkConfig)
 	{
-		$this->_defaultClient = $defaultClient;
-		$this->_securityClient = $securityClient;
-		$this->_serverUrl = $serverUrl;
-		$this->_language = $language;
-		$this->_sdkVersion = $sdkVersion;
-		$this->_genVersion = $genVersion;
+		$this->sdkConfiguration = $sdkConfig;
 	}
 	
     /**
@@ -49,14 +33,14 @@ class Systems
         \emdash\SpaceTraders\Models\Operations\GetJumpGateRequest $request,
     ): \emdash\SpaceTraders\Models\Operations\GetJumpGateResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/systems/{systemSymbol}/waypoints/{waypointSymbol}/jump-gate', \emdash\SpaceTraders\Models\Operations\GetJumpGateRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $httpResponse = $this->_securityClient->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -87,14 +71,14 @@ class Systems
         \emdash\SpaceTraders\Models\Operations\GetMarketRequest $request,
     ): \emdash\SpaceTraders\Models\Operations\GetMarketResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/systems/{systemSymbol}/waypoints/{waypointSymbol}/market', \emdash\SpaceTraders\Models\Operations\GetMarketRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $httpResponse = $this->_securityClient->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -125,14 +109,14 @@ class Systems
         \emdash\SpaceTraders\Models\Operations\GetShipyardRequest $request,
     ): \emdash\SpaceTraders\Models\Operations\GetShipyardResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/systems/{systemSymbol}/waypoints/{waypointSymbol}/shipyard', \emdash\SpaceTraders\Models\Operations\GetShipyardRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $httpResponse = $this->_securityClient->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -163,14 +147,14 @@ class Systems
         \emdash\SpaceTraders\Models\Operations\GetSystemRequest $request,
     ): \emdash\SpaceTraders\Models\Operations\GetSystemResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/systems/{systemSymbol}', \emdash\SpaceTraders\Models\Operations\GetSystemRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $httpResponse = $this->_securityClient->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -203,15 +187,15 @@ class Systems
         \emdash\SpaceTraders\Models\Operations\GetSystemWaypointsSecurity $security,
     ): \emdash\SpaceTraders\Models\Operations\GetSystemWaypointsResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/systems/{systemSymbol}/waypoints', \emdash\SpaceTraders\Models\Operations\GetSystemWaypointsRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\emdash\SpaceTraders\Models\Operations\GetSystemWaypointsRequest::class, $request, null));
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->_defaultClient, $security);
+        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
@@ -243,15 +227,15 @@ class Systems
         \emdash\SpaceTraders\Models\Operations\GetSystemsRequest $request,
     ): \emdash\SpaceTraders\Models\Operations\GetSystemsResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/systems');
         
         $options = ['http_errors' => false];
         $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\emdash\SpaceTraders\Models\Operations\GetSystemsRequest::class, $request, null));
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $httpResponse = $this->_securityClient->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -282,14 +266,14 @@ class Systems
         \emdash\SpaceTraders\Models\Operations\GetWaypointRequest $request,
     ): \emdash\SpaceTraders\Models\Operations\GetWaypointResponse
     {
-        $baseUrl = $this->_serverUrl;
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/systems/{systemSymbol}/waypoints/{waypointSymbol}', \emdash\SpaceTraders\Models\Operations\GetWaypointRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->_language, $this->_sdkVersion, $this->_genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
         
-        $httpResponse = $this->_securityClient->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
