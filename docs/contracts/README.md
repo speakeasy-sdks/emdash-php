@@ -37,7 +37,7 @@ try {
     $request->contractId = 'illum';
 
     $requestSecurity = new AcceptContractSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->contracts->acceptContract($request, $requestSecurity);
 
@@ -79,7 +79,7 @@ try {
     $request->contractId = 'suscipit';
 
     $requestSecurity = new DeliverContractSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->contracts->deliverContract($request, $requestSecurity);
 
@@ -116,7 +116,7 @@ try {
     $request->contractId = 'iure';
 
     $requestSecurity = new FulfillContractSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->contracts->fulfillContract($request, $requestSecurity);
 
@@ -153,7 +153,7 @@ try {
     $request->contractId = 'magnam';
 
     $requestSecurity = new GetContractSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->contracts->getContract($request, $requestSecurity);
 
@@ -191,7 +191,7 @@ try {
     $request->page = 56713;
 
     $requestSecurity = new GetContractsSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->contracts->getContracts($request, $requestSecurity);
 

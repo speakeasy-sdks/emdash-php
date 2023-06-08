@@ -176,7 +176,7 @@ try {
     $request->systemSymbol = 'hic';
 
     $requestSecurity = new GetSystemWaypointsSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->systems->getSystemWaypoints($request, $requestSecurity);
 

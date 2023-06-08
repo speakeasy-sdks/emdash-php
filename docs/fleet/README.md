@@ -61,7 +61,7 @@ try {
     $request->shipSymbol = 'molestiae';
 
     $requestSecurity = new CreateChartSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->createChart($request, $requestSecurity);
 
@@ -98,7 +98,7 @@ try {
     $request->shipSymbol = 'minus';
 
     $requestSecurity = new CreateShipShipScanSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->createShipShipScan($request, $requestSecurity);
 
@@ -135,7 +135,7 @@ try {
     $request->shipSymbol = 'placeat';
 
     $requestSecurity = new CreateShipSystemScanSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->createShipSystemScan($request, $requestSecurity);
 
@@ -172,7 +172,7 @@ try {
     $request->shipSymbol = 'voluptatum';
 
     $requestSecurity = new CreateShipWaypointScanSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->createShipWaypointScan($request, $requestSecurity);
 
@@ -211,7 +211,7 @@ try {
     $request->shipSymbol = 'iusto';
 
     $requestSecurity = new CreateSurveySecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->createSurvey($request, $requestSecurity);
 
@@ -250,7 +250,7 @@ try {
     $request->shipSymbol = 'excepturi';
 
     $requestSecurity = new DockShipSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->dockShip($request, $requestSecurity);
 
@@ -301,7 +301,7 @@ try {
     $request->shipSymbol = 'deserunt';
 
     $requestSecurity = new ExtractResourcesSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->extractResources($request, $requestSecurity);
 
@@ -338,7 +338,7 @@ try {
     $request->shipSymbol = 'perferendis';
 
     $requestSecurity = new GetMyShipSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->getMyShip($request, $requestSecurity);
 
@@ -375,7 +375,7 @@ try {
     $request->shipSymbol = 'ipsam';
 
     $requestSecurity = new GetMyShipCargoSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->getMyShipCargo($request, $requestSecurity);
 
@@ -413,7 +413,7 @@ try {
     $request->page = 957156;
 
     $requestSecurity = new GetMyShipsSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->getMyShips($request, $requestSecurity);
 
@@ -454,7 +454,7 @@ try {
     $request->shipSymbol = 'quo';
 
     $requestSecurity = new GetShipCooldownSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->getShipCooldown($request, $requestSecurity);
 
@@ -491,7 +491,7 @@ try {
     $request->shipSymbol = 'odit';
 
     $requestSecurity = new GetShipNavSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->getShipNav($request, $requestSecurity);
 
@@ -532,7 +532,7 @@ try {
     $request->shipSymbol = 'maiores';
 
     $requestSecurity = new JettisonSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->jettison($request, $requestSecurity);
 
@@ -572,7 +572,7 @@ try {
     $request->shipSymbol = 'quod';
 
     $requestSecurity = new JumpShipSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->jumpShip($request, $requestSecurity);
 
@@ -616,7 +616,7 @@ try {
     $request->shipSymbol = 'esse';
 
     $requestSecurity = new NavigateShipSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->navigateShip($request, $requestSecurity);
 
@@ -654,7 +654,7 @@ try {
     $request->shipSymbol = 'porro';
 
     $requestSecurity = new NegotiateContractSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->negotiateContract($request, $requestSecurity);
 
@@ -693,7 +693,7 @@ try {
     $request->shipSymbol = 'dolorum';
 
     $requestSecurity = new OrbitShipSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->orbitShip($request, $requestSecurity);
 
@@ -734,7 +734,7 @@ try {
     $request->shipSymbol = 'nam';
 
     $requestSecurity = new PatchShipNavSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->patchShipNav($request, $requestSecurity);
 
@@ -775,7 +775,7 @@ try {
     $request->shipSymbol = 'fugit';
 
     $requestSecurity = new PurchaseCargoSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->purchaseCargo($request, $requestSecurity);
 
@@ -814,7 +814,7 @@ try {
     $request->waypointSymbol = 'hic';
 
     $requestSecurity = new PurchaseShipSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->purchaseShip($request, $requestSecurity);
 
@@ -851,7 +851,7 @@ try {
     $request->shipSymbol = 'optio';
 
     $requestSecurity = new RefuelShipSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->refuelShip($request, $requestSecurity);
 
@@ -892,7 +892,7 @@ try {
     $request->shipSymbol = 'commodi';
 
     $requestSecurity = new SellCargoSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->sellCargo($request, $requestSecurity);
 
@@ -933,7 +933,7 @@ try {
     $request->shipSymbol = 'modi';
 
     $requestSecurity = new ShipRefineSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->shipRefine($request, $requestSecurity);
 
@@ -975,7 +975,7 @@ try {
     $request->shipSymbol = 'esse';
 
     $requestSecurity = new TransferCargoSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->transferCargo($request, $requestSecurity);
 
@@ -1017,7 +1017,7 @@ try {
     $request->shipSymbol = 'excepturi';
 
     $requestSecurity = new WarpShipSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->fleet->warpShip($request, $requestSecurity);
 

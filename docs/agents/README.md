@@ -29,7 +29,7 @@ $sdk = SpaceTraders::builder()
 
 try {
     $requestSecurity = new GetMyAgentSecurity();
-    $requestSecurity->agentToken = 'YOUR_BEARER_TOKEN_HERE';
+    $requestSecurity->agentToken = '';
 
     $response = $sdk->agents->getMyAgent($requestSecurity);
 

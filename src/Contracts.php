@@ -40,7 +40,7 @@ class Contracts
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
         $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
@@ -83,7 +83,7 @@ class Contracts
         $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
         $options = array_merge_recursive($options, $body);
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
         $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
@@ -124,7 +124,7 @@ class Contracts
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
         $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('POST', $url, $options);
@@ -165,7 +165,7 @@ class Contracts
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
         $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('GET', $url, $options);
@@ -207,7 +207,7 @@ class Contracts
         $options = ['http_errors' => false];
         $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\emdash\SpaceTraders\Models\Operations\GetContractsRequest::class, $request, null));
         $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion);
+        $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
         $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
         $httpResponse = $client->request('GET', $url, $options);
