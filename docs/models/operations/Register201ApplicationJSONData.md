@@ -1,0 +1,12 @@
+# Register201ApplicationJSONData
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `agent`                                                                        | [\emdash\SpaceTraders\Models\Shared\Agent](../../models/shared/Agent.md)       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `contract`                                                                     | [\emdash\SpaceTraders\Models\Shared\Contract](../../models/shared/Contract.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `faction`                                                                      | [\emdash\SpaceTraders\Models\Shared\Faction](../../models/shared/Faction.md)   | :heavy_check_mark:                                                             | N/A                                                                            |
+| `ship`                                                                         | [\emdash\SpaceTraders\Models\Shared\Ship](../../models/shared/Ship.md)         | :heavy_check_mark:                                                             | A ship                                                                         |
+| `token`                                                                        | *string*                                                                       | :heavy_check_mark:                                                             | A Bearer token for accessing secured API endpoints.                            |

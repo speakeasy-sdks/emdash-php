@@ -12,6 +12,6 @@ namespace emdash\SpaceTraders\Models\Shared;
 /** The rotation of crew shifts. A stricter shift improves the ship's performance. A more relaxed shift improves the crew's morale. */
 enum ShipCrewRotation: string
 {
-    case STRICT = 'STRICT';
-    case RELAXED = 'RELAXED';
+    case Strict = 'STRICT';
+    case Relaxed = 'RELAXED';
 }

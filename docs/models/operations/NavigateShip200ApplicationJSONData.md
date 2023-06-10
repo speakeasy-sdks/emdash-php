@@ -1,0 +1,9 @@
+# NavigateShip200ApplicationJSONData
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `fuel`                                                                                                   | [\emdash\SpaceTraders\Models\Shared\ShipFuel](../../models/shared/ShipFuel.md)                           | :heavy_check_mark:                                                                                       | Details of the ship's fuel tanks including how much fuel was consumed during the last transit or action. |
+| `nav`                                                                                                    | [\emdash\SpaceTraders\Models\Shared\ShipNav](../../models/shared/ShipNav.md)                             | :heavy_check_mark:                                                                                       | The navigation information of the ship.                                                                  |

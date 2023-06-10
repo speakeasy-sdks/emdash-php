@@ -12,8 +12,8 @@ namespace emdash\SpaceTraders\Models\Shared;
 /** A rough estimate of the total supply of this good in the marketplace. */
 enum MarketTradeGoodSupply: string
 {
-    case SCARCE = 'SCARCE';
-    case LIMITED = 'LIMITED';
-    case MODERATE = 'MODERATE';
-    case ABUNDANT = 'ABUNDANT';
+    case Scarce = 'SCARCE';
+    case Limited = 'LIMITED';
+    case Moderate = 'MODERATE';
+    case Abundant = 'ABUNDANT';
 }

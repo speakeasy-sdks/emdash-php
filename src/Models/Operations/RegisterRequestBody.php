@@ -42,7 +42,7 @@ class RegisterRequestBody
 	public function __construct()
 	{
 		$this->email = null;
-		$this->faction = \emdash\SpaceTraders\Models\Operations\RegisterRequestBodyFaction::COSMIC;
+		$this->faction = \emdash\SpaceTraders\Models\Operations\RegisterRequestBodyFaction::Cosmic;
 		$this->symbol = "";
 	}
 }

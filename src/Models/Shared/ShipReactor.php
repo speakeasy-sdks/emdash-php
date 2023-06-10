@@ -59,6 +59,6 @@ class ShipReactor
 		$this->name = "";
 		$this->powerOutput = 0;
 		$this->requirements = new \emdash\SpaceTraders\Models\Shared\ShipRequirements();
-		$this->symbol = \emdash\SpaceTraders\Models\Shared\ShipReactorSymbol::REACTOR_SOLAR_I;
+		$this->symbol = \emdash\SpaceTraders\Models\Shared\ShipReactorSymbol::ReactorSolarI;
 	}
 }

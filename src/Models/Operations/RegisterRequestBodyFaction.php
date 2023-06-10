@@ -12,9 +12,9 @@ namespace emdash\SpaceTraders\Models\Operations;
 /** The faction you choose determines your headquarters. */
 enum RegisterRequestBodyFaction: string
 {
-    case COSMIC = 'COSMIC';
-    case VOID = 'VOID';
-    case GALACTIC = 'GALACTIC';
-    case QUANTUM = 'QUANTUM';
-    case DOMINION = 'DOMINION';
+    case Cosmic = 'COSMIC';
+    case Void = 'VOID';
+    case Galactic = 'GALACTIC';
+    case Quantum = 'QUANTUM';
+    case Dominion = 'DOMINION';
 }

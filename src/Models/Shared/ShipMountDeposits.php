@@ -11,18 +11,18 @@ namespace emdash\SpaceTraders\Models\Shared;
 
 enum ShipMountDeposits: string
 {
-    case QUARTZ_SAND = 'QUARTZ_SAND';
-    case SILICON_CRYSTALS = 'SILICON_CRYSTALS';
-    case PRECIOUS_STONES = 'PRECIOUS_STONES';
-    case ICE_WATER = 'ICE_WATER';
-    case AMMONIA_ICE = 'AMMONIA_ICE';
-    case IRON_ORE = 'IRON_ORE';
-    case COPPER_ORE = 'COPPER_ORE';
-    case SILVER_ORE = 'SILVER_ORE';
-    case ALUMINUM_ORE = 'ALUMINUM_ORE';
-    case GOLD_ORE = 'GOLD_ORE';
-    case PLATINUM_ORE = 'PLATINUM_ORE';
-    case DIAMONDS = 'DIAMONDS';
-    case URANITE_ORE = 'URANITE_ORE';
-    case MERITIUM_ORE = 'MERITIUM_ORE';
+    case QuartzSand = 'QUARTZ_SAND';
+    case SiliconCrystals = 'SILICON_CRYSTALS';
+    case PreciousStones = 'PRECIOUS_STONES';
+    case IceWater = 'ICE_WATER';
+    case AmmoniaIce = 'AMMONIA_ICE';
+    case IronOre = 'IRON_ORE';
+    case CopperOre = 'COPPER_ORE';
+    case SilverOre = 'SILVER_ORE';
+    case AluminumOre = 'ALUMINUM_ORE';
+    case GoldOre = 'GOLD_ORE';
+    case PlatinumOre = 'PLATINUM_ORE';
+    case Diamonds = 'DIAMONDS';
+    case UraniteOre = 'URANITE_ORE';
+    case MeritiumOre = 'MERITIUM_ORE';
 }

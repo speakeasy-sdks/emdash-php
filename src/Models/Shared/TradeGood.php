@@ -27,6 +27,6 @@ class TradeGood
 	{
 		$this->description = "";
 		$this->name = "";
-		$this->symbol = \emdash\SpaceTraders\Models\Shared\TradeSymbol::PRECIOUS_STONES;
+		$this->symbol = \emdash\SpaceTraders\Models\Shared\TradeSymbol::PreciousStones;
 	}
 }

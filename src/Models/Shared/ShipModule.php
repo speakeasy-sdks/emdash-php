@@ -56,6 +56,6 @@ class ShipModule
 		$this->name = "";
 		$this->range = null;
 		$this->requirements = new \emdash\SpaceTraders\Models\Shared\ShipRequirements();
-		$this->symbol = \emdash\SpaceTraders\Models\Shared\ShipModuleSymbol::MODULE_MINERAL_PROCESSOR_I;
+		$this->symbol = \emdash\SpaceTraders\Models\Shared\ShipModuleSymbol::ModuleMineralProcessorI;
 	}
 }

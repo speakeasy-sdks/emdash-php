@@ -12,14 +12,14 @@ namespace emdash\SpaceTraders\Models\Shared;
 /** The type of waypoint. */
 enum SystemType: string
 {
-    case NEUTRON_STAR = 'NEUTRON_STAR';
-    case RED_STAR = 'RED_STAR';
-    case ORANGE_STAR = 'ORANGE_STAR';
-    case BLUE_STAR = 'BLUE_STAR';
-    case YOUNG_STAR = 'YOUNG_STAR';
-    case WHITE_DWARF = 'WHITE_DWARF';
-    case BLACK_HOLE = 'BLACK_HOLE';
-    case HYPERGIANT = 'HYPERGIANT';
-    case NEBULA = 'NEBULA';
-    case UNSTABLE = 'UNSTABLE';
+    case NeutronStar = 'NEUTRON_STAR';
+    case RedStar = 'RED_STAR';
+    case OrangeStar = 'ORANGE_STAR';
+    case BlueStar = 'BLUE_STAR';
+    case YoungStar = 'YOUNG_STAR';
+    case WhiteDwarf = 'WHITE_DWARF';
+    case BlackHole = 'BLACK_HOLE';
+    case Hypergiant = 'HYPERGIANT';
+    case Nebula = 'NEBULA';
+    case Unstable = 'UNSTABLE';
 }

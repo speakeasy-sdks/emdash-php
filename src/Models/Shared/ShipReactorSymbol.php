@@ -11,9 +11,9 @@ namespace emdash\SpaceTraders\Models\Shared;
 
 enum ShipReactorSymbol: string
 {
-    case REACTOR_SOLAR_I = 'REACTOR_SOLAR_I';
-    case REACTOR_FUSION_I = 'REACTOR_FUSION_I';
-    case REACTOR_FISSION_I = 'REACTOR_FISSION_I';
-    case REACTOR_CHEMICAL_I = 'REACTOR_CHEMICAL_I';
-    case REACTOR_ANTIMATTER_I = 'REACTOR_ANTIMATTER_I';
+    case ReactorSolarI = 'REACTOR_SOLAR_I';
+    case ReactorFusionI = 'REACTOR_FUSION_I';
+    case ReactorFissionI = 'REACTOR_FISSION_I';
+    case ReactorChemicalI = 'REACTOR_CHEMICAL_I';
+    case ReactorAntimatterI = 'REACTOR_ANTIMATTER_I';
 }

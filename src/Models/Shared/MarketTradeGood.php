@@ -60,7 +60,7 @@ class MarketTradeGood
 	{
 		$this->purchasePrice = 0;
 		$this->sellPrice = 0;
-		$this->supply = \emdash\SpaceTraders\Models\Shared\MarketTradeGoodSupply::SCARCE;
+		$this->supply = \emdash\SpaceTraders\Models\Shared\MarketTradeGoodSupply::Scarce;
 		$this->symbol = "";
 		$this->tradeVolume = 0;
 	}

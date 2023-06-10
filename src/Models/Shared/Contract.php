@@ -78,6 +78,6 @@ class Contract
 		$this->fulfilled = false;
 		$this->id = "";
 		$this->terms = new \emdash\SpaceTraders\Models\Shared\ContractTerms();
-		$this->type = \emdash\SpaceTraders\Models\Shared\ContractType::PROCUREMENT;
+		$this->type = \emdash\SpaceTraders\Models\Shared\ContractType::Procurement;
 	}
 }

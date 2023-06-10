@@ -64,9 +64,9 @@ class ShipNav
     
 	public function __construct()
 	{
-		$this->flightMode = \emdash\SpaceTraders\Models\Shared\ShipNavFlightMode::DRIFT;
+		$this->flightMode = \emdash\SpaceTraders\Models\Shared\ShipNavFlightMode::Drift;
 		$this->route = new \emdash\SpaceTraders\Models\Shared\ShipNavRoute();
-		$this->status = \emdash\SpaceTraders\Models\Shared\ShipNavStatus::IN_TRANSIT;
+		$this->status = \emdash\SpaceTraders\Models\Shared\ShipNavStatus::InTransit;
 		$this->systemSymbol = "";
 		$this->waypointSymbol = "";
 	}

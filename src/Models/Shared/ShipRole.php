@@ -12,18 +12,18 @@ namespace emdash\SpaceTraders\Models\Shared;
 /** The registered role of the ship */
 enum ShipRole: string
 {
-    case FABRICATOR = 'FABRICATOR';
-    case HARVESTER = 'HARVESTER';
-    case HAULER = 'HAULER';
-    case INTERCEPTOR = 'INTERCEPTOR';
-    case EXCAVATOR = 'EXCAVATOR';
-    case TRANSPORT = 'TRANSPORT';
-    case REPAIR = 'REPAIR';
-    case SURVEYOR = 'SURVEYOR';
-    case COMMAND = 'COMMAND';
-    case CARRIER = 'CARRIER';
-    case PATROL = 'PATROL';
-    case SATELLITE = 'SATELLITE';
-    case EXPLORER = 'EXPLORER';
-    case REFINERY = 'REFINERY';
+    case Fabricator = 'FABRICATOR';
+    case Harvester = 'HARVESTER';
+    case Hauler = 'HAULER';
+    case Interceptor = 'INTERCEPTOR';
+    case Excavator = 'EXCAVATOR';
+    case Transport = 'TRANSPORT';
+    case Repair = 'REPAIR';
+    case Surveyor = 'SURVEYOR';
+    case Command = 'COMMAND';
+    case Carrier = 'CARRIER';
+    case Patrol = 'PATROL';
+    case Satellite = 'SATELLITE';
+    case Explorer = 'EXPLORER';
+    case Refinery = 'REFINERY';
 }

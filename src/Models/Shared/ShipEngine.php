@@ -59,6 +59,6 @@ class ShipEngine
 		$this->name = "";
 		$this->requirements = new \emdash\SpaceTraders\Models\Shared\ShipRequirements();
 		$this->speed = 0;
-		$this->symbol = \emdash\SpaceTraders\Models\Shared\ShipEngineSymbol::ENGINE_IMPULSE_DRIVE_I;
+		$this->symbol = \emdash\SpaceTraders\Models\Shared\ShipEngineSymbol::EngineImpulseDriveI;
 	}
 }

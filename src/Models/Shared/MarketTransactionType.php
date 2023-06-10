@@ -12,6 +12,6 @@ namespace emdash\SpaceTraders\Models\Shared;
 /** The type of transaction. */
 enum MarketTransactionType: string
 {
-    case PURCHASE = 'PURCHASE';
-    case SELL = 'SELL';
+    case Purchase = 'PURCHASE';
+    case Sell = 'SELL';
 }

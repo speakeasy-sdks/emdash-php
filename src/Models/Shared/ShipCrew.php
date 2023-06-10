@@ -77,7 +77,7 @@ class ShipCrew
 		$this->current = 0;
 		$this->morale = 0;
 		$this->required = 0;
-		$this->rotation = \emdash\SpaceTraders\Models\Shared\ShipCrewRotation::STRICT;
+		$this->rotation = \emdash\SpaceTraders\Models\Shared\ShipCrewRotation::Strict;
 		$this->wages = 0;
 	}
 }

@@ -35,7 +35,7 @@ class SystemWaypoint
 	public function __construct()
 	{
 		$this->symbol = "";
-		$this->type = \emdash\SpaceTraders\Models\Shared\WaypointType::PLANET;
+		$this->type = \emdash\SpaceTraders\Models\Shared\WaypointType::Planet;
 		$this->x = 0;
 		$this->y = 0;
 	}

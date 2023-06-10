@@ -12,7 +12,7 @@ namespace emdash\SpaceTraders\Models\Shared;
 /** The current status of the ship */
 enum ShipNavStatus: string
 {
-    case IN_TRANSIT = 'IN_TRANSIT';
-    case IN_ORBIT = 'IN_ORBIT';
-    case DOCKED = 'DOCKED';
+    case InTransit = 'IN_TRANSIT';
+    case InOrbit = 'IN_ORBIT';
+    case Docked = 'DOCKED';
 }

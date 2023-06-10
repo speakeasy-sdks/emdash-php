@@ -42,6 +42,6 @@ class FactionTrait
 	{
 		$this->description = "";
 		$this->name = "";
-		$this->symbol = \emdash\SpaceTraders\Models\Shared\FactionTraitSymbol::BUREAUCRATIC;
+		$this->symbol = \emdash\SpaceTraders\Models\Shared\FactionTraitSymbol::Bureaucratic;
 	}
 }

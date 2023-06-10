@@ -1,0 +1,13 @@
+# ShipNavRoute
+
+The routing information for the ship's most recent transit or current location.
+
+
+## Fields
+
+| Field                                                                                                 | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `arrival`                                                                                             | [\DateTime](https://www.php.net/manual/en/class.datetime.php)                                         | :heavy_check_mark:                                                                                    | The date time of the ship's arrival. If the ship is in-transit, this is the expected time of arrival. |
+| `departure`                                                                                           | [ShipNavRouteWaypoint](../../models/shared/ShipNavRouteWaypoint.md)                                   | :heavy_check_mark:                                                                                    | The destination or departure of a ships nav route.                                                    |
+| `departureTime`                                                                                       | [\DateTime](https://www.php.net/manual/en/class.datetime.php)                                         | :heavy_check_mark:                                                                                    | The date time of the ship's departure.                                                                |
+| `destination`                                                                                         | [ShipNavRouteWaypoint](../../models/shared/ShipNavRouteWaypoint.md)                                   | :heavy_check_mark:                                                                                    | The destination or departure of a ships nav route.                                                    |

@@ -1,0 +1,10 @@
+# SellCargoSellCargo201ResponseData
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `agent`                                                                                          | [\emdash\SpaceTraders\Models\Shared\Agent](../../models/shared/Agent.md)                         | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `cargo`                                                                                          | [\emdash\SpaceTraders\Models\Shared\ShipCargo](../../models/shared/ShipCargo.md)                 | :heavy_check_mark:                                                                               | N/A                                                                                              |
+| `transaction`                                                                                    | [\emdash\SpaceTraders\Models\Shared\MarketTransaction](../../models/shared/MarketTransaction.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |

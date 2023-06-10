@@ -11,13 +11,13 @@ namespace emdash\SpaceTraders\Models\Operations;
 
 enum ShipRefineRequestBodyProduce: string
 {
-    case IRON = 'IRON';
-    case COPPER = 'COPPER';
-    case SILVER = 'SILVER';
-    case GOLD = 'GOLD';
-    case ALUMINUM = 'ALUMINUM';
-    case PLATINUM = 'PLATINUM';
-    case URANITE = 'URANITE';
-    case MERITIUM = 'MERITIUM';
-    case FUEL = 'FUEL';
+    case Iron = 'IRON';
+    case Copper = 'COPPER';
+    case Silver = 'SILVER';
+    case Gold = 'GOLD';
+    case Aluminum = 'ALUMINUM';
+    case Platinum = 'PLATINUM';
+    case Uranite = 'URANITE';
+    case Meritium = 'MERITIUM';
+    case Fuel = 'FUEL';
 }

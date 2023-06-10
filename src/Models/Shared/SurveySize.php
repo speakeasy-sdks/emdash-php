@@ -12,7 +12,7 @@ namespace emdash\SpaceTraders\Models\Shared;
 /** The size of the deposit. This value indicates how much can be extracted from the survey before it is exhausted. */
 enum SurveySize: string
 {
-    case SMALL = 'SMALL';
-    case MODERATE = 'MODERATE';
-    case LARGE = 'LARGE';
+    case Small = 'SMALL';
+    case Moderate = 'MODERATE';
+    case Large = 'LARGE';
 }

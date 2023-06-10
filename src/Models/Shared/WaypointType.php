@@ -12,13 +12,13 @@ namespace emdash\SpaceTraders\Models\Shared;
 /** The type of waypoint. */
 enum WaypointType: string
 {
-    case PLANET = 'PLANET';
-    case GAS_GIANT = 'GAS_GIANT';
-    case MOON = 'MOON';
-    case ORBITAL_STATION = 'ORBITAL_STATION';
-    case JUMP_GATE = 'JUMP_GATE';
-    case ASTEROID_FIELD = 'ASTEROID_FIELD';
-    case NEBULA = 'NEBULA';
-    case DEBRIS_FIELD = 'DEBRIS_FIELD';
-    case GRAVITY_WELL = 'GRAVITY_WELL';
+    case Planet = 'PLANET';
+    case GasGiant = 'GAS_GIANT';
+    case Moon = 'MOON';
+    case OrbitalStation = 'ORBITAL_STATION';
+    case JumpGate = 'JUMP_GATE';
+    case AsteroidField = 'ASTEROID_FIELD';
+    case Nebula = 'NEBULA';
+    case DebrisField = 'DEBRIS_FIELD';
+    case GravityWell = 'GRAVITY_WELL';
 }

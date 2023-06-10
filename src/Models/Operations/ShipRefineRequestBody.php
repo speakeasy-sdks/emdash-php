@@ -17,6 +17,6 @@ class ShipRefineRequestBody
     
 	public function __construct()
 	{
-		$this->produce = \emdash\SpaceTraders\Models\Operations\ShipRefineRequestBodyProduce::IRON;
+		$this->produce = \emdash\SpaceTraders\Models\Operations\ShipRefineRequestBodyProduce::Iron;
 	}
 }

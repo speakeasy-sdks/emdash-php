@@ -67,7 +67,7 @@ class Survey
 		$this->deposits = [];
 		$this->expiration = new \DateTime();
 		$this->signature = "";
-		$this->size = \emdash\SpaceTraders\Models\Shared\SurveySize::SMALL;
+		$this->size = \emdash\SpaceTraders\Models\Shared\SurveySize::Small;
 		$this->symbol = "";
 	}
 }

@@ -11,19 +11,19 @@ namespace emdash\SpaceTraders\Models\Shared;
 
 enum ShipMountSymbol: string
 {
-    case MOUNT_GAS_SIPHON_I = 'MOUNT_GAS_SIPHON_I';
-    case MOUNT_GAS_SIPHON_II = 'MOUNT_GAS_SIPHON_II';
-    case MOUNT_GAS_SIPHON_III = 'MOUNT_GAS_SIPHON_III';
-    case MOUNT_SURVEYOR_I = 'MOUNT_SURVEYOR_I';
-    case MOUNT_SURVEYOR_II = 'MOUNT_SURVEYOR_II';
-    case MOUNT_SURVEYOR_III = 'MOUNT_SURVEYOR_III';
-    case MOUNT_SENSOR_ARRAY_I = 'MOUNT_SENSOR_ARRAY_I';
-    case MOUNT_SENSOR_ARRAY_II = 'MOUNT_SENSOR_ARRAY_II';
-    case MOUNT_SENSOR_ARRAY_III = 'MOUNT_SENSOR_ARRAY_III';
-    case MOUNT_MINING_LASER_I = 'MOUNT_MINING_LASER_I';
-    case MOUNT_MINING_LASER_II = 'MOUNT_MINING_LASER_II';
-    case MOUNT_MINING_LASER_III = 'MOUNT_MINING_LASER_III';
-    case MOUNT_LASER_CANNON_I = 'MOUNT_LASER_CANNON_I';
-    case MOUNT_MISSILE_LAUNCHER_I = 'MOUNT_MISSILE_LAUNCHER_I';
-    case MOUNT_TURRET_I = 'MOUNT_TURRET_I';
+    case MountGasSiphonI = 'MOUNT_GAS_SIPHON_I';
+    case MountGasSiphonIi = 'MOUNT_GAS_SIPHON_II';
+    case MountGasSiphonIii = 'MOUNT_GAS_SIPHON_III';
+    case MountSurveyorI = 'MOUNT_SURVEYOR_I';
+    case MountSurveyorIi = 'MOUNT_SURVEYOR_II';
+    case MountSurveyorIii = 'MOUNT_SURVEYOR_III';
+    case MountSensorArrayI = 'MOUNT_SENSOR_ARRAY_I';
+    case MountSensorArrayIi = 'MOUNT_SENSOR_ARRAY_II';
+    case MountSensorArrayIii = 'MOUNT_SENSOR_ARRAY_III';
+    case MountMiningLaserI = 'MOUNT_MINING_LASER_I';
+    case MountMiningLaserIi = 'MOUNT_MINING_LASER_II';
+    case MountMiningLaserIii = 'MOUNT_MINING_LASER_III';
+    case MountLaserCannonI = 'MOUNT_LASER_CANNON_I';
+    case MountMissileLauncherI = 'MOUNT_MISSILE_LAUNCHER_I';
+    case MountTurretI = 'MOUNT_TURRET_I';
 }

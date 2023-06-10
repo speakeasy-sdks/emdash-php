@@ -45,7 +45,7 @@ class ScannedSystem
 		$this->distance = 0;
 		$this->sectorSymbol = "";
 		$this->symbol = "";
-		$this->type = \emdash\SpaceTraders\Models\Shared\SystemType::NEUTRON_STAR;
+		$this->type = \emdash\SpaceTraders\Models\Shared\SystemType::NeutronStar;
 		$this->x = 0;
 		$this->y = 0;
 	}

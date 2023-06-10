@@ -61,6 +61,6 @@ class ShipMount
 		$this->name = "";
 		$this->requirements = new \emdash\SpaceTraders\Models\Shared\ShipRequirements();
 		$this->strength = null;
-		$this->symbol = \emdash\SpaceTraders\Models\Shared\ShipMountSymbol::MOUNT_GAS_SIPHON_I;
+		$this->symbol = \emdash\SpaceTraders\Models\Shared\ShipMountSymbol::MountGasSiphonI;
 	}
 }

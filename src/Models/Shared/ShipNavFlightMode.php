@@ -12,8 +12,8 @@ namespace emdash\SpaceTraders\Models\Shared;
 /** The ship's set speed when traveling between waypoints or systems. */
 enum ShipNavFlightMode: string
 {
-    case DRIFT = 'DRIFT';
-    case STEALTH = 'STEALTH';
-    case CRUISE = 'CRUISE';
-    case BURN = 'BURN';
+    case Drift = 'DRIFT';
+    case Stealth = 'STEALTH';
+    case Cruise = 'CRUISE';
+    case Burn = 'BURN';
 }

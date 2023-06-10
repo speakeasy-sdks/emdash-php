@@ -11,8 +11,8 @@ namespace emdash\SpaceTraders\Models\Shared;
 
 enum ShipEngineSymbol: string
 {
-    case ENGINE_IMPULSE_DRIVE_I = 'ENGINE_IMPULSE_DRIVE_I';
-    case ENGINE_ION_DRIVE_I = 'ENGINE_ION_DRIVE_I';
-    case ENGINE_ION_DRIVE_II = 'ENGINE_ION_DRIVE_II';
-    case ENGINE_HYPER_DRIVE_I = 'ENGINE_HYPER_DRIVE_I';
+    case EngineImpulseDriveI = 'ENGINE_IMPULSE_DRIVE_I';
+    case EngineIonDriveI = 'ENGINE_ION_DRIVE_I';
+    case EngineIonDriveIi = 'ENGINE_ION_DRIVE_II';
+    case EngineHyperDriveI = 'ENGINE_HYPER_DRIVE_I';
 }

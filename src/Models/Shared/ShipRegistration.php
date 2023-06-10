@@ -48,6 +48,6 @@ class ShipRegistration
 	{
 		$this->factionSymbol = "";
 		$this->name = "";
-		$this->role = \emdash\SpaceTraders\Models\Shared\ShipRole::FABRICATOR;
+		$this->role = \emdash\SpaceTraders\Models\Shared\ShipRole::Fabricator;
 	}
 }

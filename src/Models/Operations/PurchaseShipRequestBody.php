@@ -26,7 +26,7 @@ class PurchaseShipRequestBody
     
 	public function __construct()
 	{
-		$this->shipType = \emdash\SpaceTraders\Models\Shared\ShipType::SHIP_PROBE;
+		$this->shipType = \emdash\SpaceTraders\Models\Shared\ShipType::ShipProbe;
 		$this->waypointSymbol = "";
 	}
 }

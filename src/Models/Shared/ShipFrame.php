@@ -69,6 +69,6 @@ class ShipFrame
 		$this->mountingPoints = 0;
 		$this->name = "";
 		$this->requirements = new \emdash\SpaceTraders\Models\Shared\ShipRequirements();
-		$this->symbol = \emdash\SpaceTraders\Models\Shared\ShipFrameSymbol::FRAME_PROBE;
+		$this->symbol = \emdash\SpaceTraders\Models\Shared\ShipFrameSymbol::FrameProbe;
 	}
 }

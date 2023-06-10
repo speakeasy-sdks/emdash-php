@@ -1,0 +1,10 @@
+# PurchaseShip201ApplicationJSONData
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `agent`                                                                                              | [\emdash\SpaceTraders\Models\Shared\Agent](../../models/shared/Agent.md)                             | :heavy_check_mark:                                                                                   | N/A                                                                                                  |
+| `ship`                                                                                               | [\emdash\SpaceTraders\Models\Shared\Ship](../../models/shared/Ship.md)                               | :heavy_check_mark:                                                                                   | A ship                                                                                               |
+| `transaction`                                                                                        | [\emdash\SpaceTraders\Models\Shared\ShipyardTransaction](../../models/shared/ShipyardTransaction.md) | :heavy_check_mark:                                                                                   | N/A                                                                                                  |

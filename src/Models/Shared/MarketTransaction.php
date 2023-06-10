@@ -90,7 +90,7 @@ class MarketTransaction
 		$this->timestamp = new \DateTime();
 		$this->totalPrice = 0;
 		$this->tradeSymbol = "";
-		$this->type = \emdash\SpaceTraders\Models\Shared\MarketTransactionType::PURCHASE;
+		$this->type = \emdash\SpaceTraders\Models\Shared\MarketTransactionType::Purchase;
 		$this->units = 0;
 		$this->waypointSymbol = "";
 	}

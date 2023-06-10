@@ -42,6 +42,6 @@ class WaypointTrait
 	{
 		$this->description = "";
 		$this->name = "";
-		$this->symbol = \emdash\SpaceTraders\Models\Shared\WaypointTraitSymbol::UNCHARTED;
+		$this->symbol = \emdash\SpaceTraders\Models\Shared\WaypointTraitSymbol::Uncharted;
 	}
 }

@@ -11,7 +11,7 @@ namespace emdash\SpaceTraders\Models\Shared;
 
 enum ContractType: string
 {
-    case PROCUREMENT = 'PROCUREMENT';
-    case TRANSPORT = 'TRANSPORT';
-    case SHUTTLE = 'SHUTTLE';
+    case Procurement = 'PROCUREMENT';
+    case Transport = 'TRANSPORT';
+    case Shuttle = 'SHUTTLE';
 }

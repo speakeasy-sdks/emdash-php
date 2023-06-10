@@ -46,7 +46,7 @@ class ShipNavRouteWaypoint
 	{
 		$this->symbol = "";
 		$this->systemSymbol = "";
-		$this->type = \emdash\SpaceTraders\Models\Shared\WaypointType::PLANET;
+		$this->type = \emdash\SpaceTraders\Models\Shared\WaypointType::Planet;
 		$this->x = 0;
 		$this->y = 0;
 	}
